@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "eed4da518f5717aaa636131f8d318126",
+    "content-hash": "2119288c3b994906e8eda191bf130daa",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -215,6 +215,50 @@
             "time": "2017-06-03T02:28:16+00:00"
         },
         {
+            "name": "funson86/yii2-blog",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/funson86/yii2-blog.git",
+                "reference": "657458955e9b6bbbb7e4e584752d67089b675a49"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/funson86/yii2-blog/zipball/657458955e9b6bbbb7e4e584752d67089b675a49",
+                "reference": "657458955e9b6bbbb7e4e584752d67089b675a49",
+                "shasum": ""
+            },
+            "require": {
+                "mihaildev/yii2-ckeditor": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "bootstrap": "funson86\\blog\\Bootstrap"
+            },
+            "autoload": {
+                "psr-4": {
+                    "funson86\\blog\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Funson Lee",
+                    "email": "funson86@gmail.com"
+                }
+            ],
+            "description": "Yii2 Blog for other application",
+            "keywords": [
+                "extension",
+                "yii2"
+            ],
+            "time": "2015-08-07T03:54:44+00:00"
+        },
+        {
             "name": "mdmsoft/yii2-admin",
             "version": "dev-master",
             "source": {
@@ -271,6 +315,57 @@
                 "yii"
             ],
             "time": "2017-11-18T13:27:11+00:00"
+        },
+        {
+            "name": "mihaildev/yii2-ckeditor",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MihailDev/yii2-ckeditor.git",
+                "reference": "d20aa7f6bcf610fee226d6eb15212a279875bf87"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MihailDev/yii2-ckeditor/zipball/d20aa7f6bcf610fee226d6eb15212a279875bf87",
+                "reference": "d20aa7f6bcf610fee226d6eb15212a279875bf87",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "mihaildev\\ckeditor\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Mihail",
+                    "email": "mihail.kucher@gmail.com",
+                    "homepage": "https://github.com/MihailDev",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Yii2 CKEditor",
+            "homepage": "https://github.com/MihailDev/yii2-ckeditor",
+            "keywords": [
+                "CKEditor",
+                "editor",
+                "wysiwyg",
+                "yii"
+            ],
+            "time": "2014-11-19T22:04:08+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3244,7 +3339,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "funson86/yii2-blog": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
