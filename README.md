@@ -16,6 +16,11 @@ composer require --prefer-dist funson86/yii2-blog
 
 ./yii migrate --migrationPath=@funson86/yii-blog/migrations
 
+https://github.com/funson86/yii2-blog
+
+https://github.com/mdmsoft/yii2-admin
+
+http://yii2blog.com/
 
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">

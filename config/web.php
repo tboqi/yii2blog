@@ -11,6 +11,7 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
     ],
+    'language' => 'zh-CN',
     'timeZone' => 'Asia/Shanghai', //time zone affect the formatter datetime format
     'components' => [
         'request' => [
@@ -67,7 +68,7 @@ $config = [
     'defaultRoute' => 'blog', //set blog as default route
     'params' => $params,
     'modules' => [
-        'yiiadmin' => [
+        'admin_system' => [
             'class' => 'mdm\admin\Module',
             'layout' => 'main',
             'menus' => [
@@ -81,7 +82,7 @@ $config = [
             ],
             'defaultRoute' => 'default/index', //帮助页面
         ],
-        'blogadmin' => [
+        'admin_blog' => [
             'class' => 'funson86\blog\Module',
             'controllerNamespace' => 'funson86\blog\controllers\backend',
         ],
@@ -95,6 +96,7 @@ $config = [
         'allowActions' => [
             'site/*',
             'blog/*',
+            'admin*',
             'yiiadmin/*',
             'blogadmin/*',
             // 'some-controller/some-action',

@@ -130,4 +130,9 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    public function actionTest()
+    {
+        var_dump(\mdm\admin\components\MenuHelper::getAssignedMenu(Yii::$app->user->id));
+    }
 }
