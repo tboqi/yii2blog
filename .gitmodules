@@ -1,3 +1,6 @@
 [submodule "modules/admin"]
 	path = modules/admin
 	url = git@github.com:tboqi/yii2-admin.git
+[submodule "modules/blog"]
+	path = modules/blog
+	url = git@github.com:tboqi/yii2-blog.git

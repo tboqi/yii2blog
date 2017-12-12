@@ -91,12 +91,12 @@ $config = [
             'defaultRoute' => 'default/index', //帮助页面
         ],
         'admin_blog' => [
-            'class' => 'funson86\blog\Module',
-            'controllerNamespace' => 'funson86\blog\controllers\backend',
+            'class' => 'app\modules\blog\Module',
+            'controllerNamespace' => 'app\modules\blog\controllers\backend',
         ],
         'blog' => [
-            'class' => 'funson86\blog\Module',
-            'controllerNamespace' => 'funson86\blog\controllers\frontend',
+            'class' => 'app\modules\blog\Module',
+            'controllerNamespace' => 'app\modules\blog\controllers\frontend',
         ],
     ],
     'as access' => [

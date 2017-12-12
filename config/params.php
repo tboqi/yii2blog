@@ -8,7 +8,7 @@ return [
     'blogPostPageCount' => '10',
     'blogLinks' => [
         'Google' => 'http://www.google.com',
-        'Funson86 Blog' => 'http://github.com/funson86/yii2-blog',
+        'tboqi Blog' => 'http://github.com/tboqi/yii2-blog',
     ],
     'blogUploadPath' => 'upload/', //default to frontend/web/upload
 ];
