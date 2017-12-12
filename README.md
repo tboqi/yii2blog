@@ -1,5 +1,7 @@
 # yii2blog
 
+php7.1
+
 使用yii2basic smarty等
 
 Bootstrap做前台 hui.admin做管理后台
@@ -7,12 +9,6 @@ Bootstrap做前台 hui.admin做管理后台
 composer create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic yii2blog
 
 46  ./yii migrate --migrationPath=@yii/rbac/migrations
-
-composer require --prefer-dist funson86/yii2-blog
-
-./yii migrate --migrationPath=@funson86/yii-blog/migrations
-
-https://github.com/funson86/yii2-blog
 
 http://yii2blog.com/
 
