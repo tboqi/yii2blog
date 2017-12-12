@@ -2,6 +2,8 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+// var_dump(dirname(__DIR__) . '/qiyu');exit;
+// Yii::setAlias('@qiyu', dirname(__DIR__) . '/qiyu');
 
 $config = [
     'id' => 'basic',
@@ -67,7 +69,7 @@ $config = [
         'view' => [
             'renderers' => [
                 'tpl' => [
-                    'class' => 'yii\smarty\ViewRenderer',
+                    'class' => 'app\libs\ViewRender',
                     //'cachePath' => '@runtime/Smarty/cache',
                 ],
             ],
