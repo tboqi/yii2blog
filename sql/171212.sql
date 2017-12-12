@@ -32,8 +32,6 @@ CREATE TABLE `auth_assignment` (
 /*Data for the table `auth_assignment` */
 
 insert  into `auth_assignment`(`item_name`,`user_id`,`created_at`) values ('系统管理员','1',1513061139);
-insert  into `auth_assignment`(`item_name`,`user_id`,`created_at`) values ('系统管理权限','1',1512962614);
-insert  into `auth_assignment`(`item_name`,`user_id`,`created_at`) values ('系统管理权限','3',1512962651);
 
 /*Table structure for table `auth_item` */
 
@@ -55,6 +53,10 @@ CREATE TABLE `auth_item` (
 
 /*Data for the table `auth_item` */
 
+insert  into `auth_item`(`name`,`type`,`description`,`rule_name`,`data`,`created_at`,`updated_at`) values ('/admin_blog/blog-catalog/index',2,NULL,NULL,NULL,1513064559,1513064559);
+insert  into `auth_item`(`name`,`type`,`description`,`rule_name`,`data`,`created_at`,`updated_at`) values ('/admin_blog/blog-comment/index',2,NULL,NULL,NULL,1513064614,1513064614);
+insert  into `auth_item`(`name`,`type`,`description`,`rule_name`,`data`,`created_at`,`updated_at`) values ('/admin_blog/blog-post/index',2,NULL,NULL,NULL,1513064598,1513064598);
+insert  into `auth_item`(`name`,`type`,`description`,`rule_name`,`data`,`created_at`,`updated_at`) values ('/admin_blog/blog-tag/index',2,NULL,NULL,NULL,1513064626,1513064626);
 insert  into `auth_item`(`name`,`type`,`description`,`rule_name`,`data`,`created_at`,`updated_at`) values ('/admin_system/assignment/index',2,NULL,NULL,NULL,1513063602,1513063602);
 insert  into `auth_item`(`name`,`type`,`description`,`rule_name`,`data`,`created_at`,`updated_at`) values ('/admin_system/default/index',2,NULL,NULL,NULL,1513060967,1513060967);
 insert  into `auth_item`(`name`,`type`,`description`,`rule_name`,`data`,`created_at`,`updated_at`) values ('/admin_system/menu/index',2,NULL,NULL,NULL,1513060374,1513060374);
@@ -63,8 +65,8 @@ insert  into `auth_item`(`name`,`type`,`description`,`rule_name`,`data`,`created
 insert  into `auth_item`(`name`,`type`,`description`,`rule_name`,`data`,`created_at`,`updated_at`) values ('/admin_system/route/index',2,NULL,NULL,NULL,1513063591,1513063591);
 insert  into `auth_item`(`name`,`type`,`description`,`rule_name`,`data`,`created_at`,`updated_at`) values ('/admin_system/rule/index',2,NULL,NULL,NULL,1513063702,1513063702);
 insert  into `auth_item`(`name`,`type`,`description`,`rule_name`,`data`,`created_at`,`updated_at`) values ('/admin_system/user/index',2,NULL,NULL,NULL,1512962447,1512962447);
+insert  into `auth_item`(`name`,`type`,`description`,`rule_name`,`data`,`created_at`,`updated_at`) values ('博客管理员',1,NULL,NULL,NULL,1513064933,1513064933);
 insert  into `auth_item`(`name`,`type`,`description`,`rule_name`,`data`,`created_at`,`updated_at`) values ('系统管理员',1,NULL,NULL,NULL,1512638854,1513063992);
-insert  into `auth_item`(`name`,`type`,`description`,`rule_name`,`data`,`created_at`,`updated_at`) values ('系统管理权限',2,NULL,NULL,NULL,1512962519,1512962519);
 
 /*Table structure for table `auth_item_child` */
 
@@ -81,22 +83,18 @@ CREATE TABLE `auth_item_child` (
 
 /*Data for the table `auth_item_child` */
 
+insert  into `auth_item_child`(`parent`,`child`) values ('博客管理员','/admin_blog/blog-catalog/index');
+insert  into `auth_item_child`(`parent`,`child`) values ('博客管理员','/admin_blog/blog-comment/index');
+insert  into `auth_item_child`(`parent`,`child`) values ('博客管理员','/admin_blog/blog-post/index');
+insert  into `auth_item_child`(`parent`,`child`) values ('博客管理员','/admin_blog/blog-tag/index');
 insert  into `auth_item_child`(`parent`,`child`) values ('系统管理员','/admin_system/assignment/index');
-insert  into `auth_item_child`(`parent`,`child`) values ('系统管理权限','/admin_system/assignment/index');
 insert  into `auth_item_child`(`parent`,`child`) values ('系统管理员','/admin_system/default/index');
-insert  into `auth_item_child`(`parent`,`child`) values ('系统管理权限','/admin_system/default/index');
 insert  into `auth_item_child`(`parent`,`child`) values ('系统管理员','/admin_system/menu/index');
-insert  into `auth_item_child`(`parent`,`child`) values ('系统管理权限','/admin_system/menu/index');
 insert  into `auth_item_child`(`parent`,`child`) values ('系统管理员','/admin_system/permission/index');
-insert  into `auth_item_child`(`parent`,`child`) values ('系统管理权限','/admin_system/permission/index');
 insert  into `auth_item_child`(`parent`,`child`) values ('系统管理员','/admin_system/role/index');
-insert  into `auth_item_child`(`parent`,`child`) values ('系统管理权限','/admin_system/role/index');
 insert  into `auth_item_child`(`parent`,`child`) values ('系统管理员','/admin_system/route/index');
-insert  into `auth_item_child`(`parent`,`child`) values ('系统管理权限','/admin_system/route/index');
 insert  into `auth_item_child`(`parent`,`child`) values ('系统管理员','/admin_system/rule/index');
-insert  into `auth_item_child`(`parent`,`child`) values ('系统管理权限','/admin_system/rule/index');
 insert  into `auth_item_child`(`parent`,`child`) values ('系统管理员','/admin_system/user/index');
-insert  into `auth_item_child`(`parent`,`child`) values ('系统管理权限','/admin_system/user/index');
 
 /*Table structure for table `auth_rule` */
 
@@ -213,7 +211,7 @@ CREATE TABLE `menu` (
   PRIMARY KEY (`id`),
   KEY `parent` (`parent`),
   CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `menu` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 /*Data for the table `menu` */
 
@@ -226,6 +224,11 @@ insert  into `menu`(`id`,`name`,`parent`,`route`,`order`,`data`) values (7,'角�
 insert  into `menu`(`id`,`name`,`parent`,`route`,`order`,`data`) values (8,'权限列表',2,'/admin_system/permission/index',NULL,NULL);
 insert  into `menu`(`id`,`name`,`parent`,`route`,`order`,`data`) values (9,'路由列表',2,'/admin_system/route/index',NULL,NULL);
 insert  into `menu`(`id`,`name`,`parent`,`route`,`order`,`data`) values (10,'规则列表',2,'/admin_system/rule/index',NULL,NULL);
+insert  into `menu`(`id`,`name`,`parent`,`route`,`order`,`data`) values (11,'博客管理',NULL,'/admin_blog/blog-post/index',NULL,NULL);
+insert  into `menu`(`id`,`name`,`parent`,`route`,`order`,`data`) values (12,'分类列表',11,'/admin_blog/blog-catalog/index',NULL,NULL);
+insert  into `menu`(`id`,`name`,`parent`,`route`,`order`,`data`) values (13,'文章列表',11,'/admin_blog/blog-post/index',NULL,NULL);
+insert  into `menu`(`id`,`name`,`parent`,`route`,`order`,`data`) values (14,'评论管理',11,'/admin_blog/blog-comment/index',NULL,NULL);
+insert  into `menu`(`id`,`name`,`parent`,`route`,`order`,`data`) values (15,'标签管理',11,'/admin_blog/blog-tag/index',NULL,NULL);
 
 /*Table structure for table `migration` */
 
