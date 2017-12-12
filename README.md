@@ -6,19 +6,13 @@ Bootstrap做前台 hui.admin做管理后台
 
 composer create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic yii2blog
 
-composer require mdmsoft/yii2-admin "~2.0"
-
 46  ./yii migrate --migrationPath=@yii/rbac/migrations
-
-48  ./yii migrate --migrationPath=@mdm/admin/migrations
 
 composer require --prefer-dist funson86/yii2-blog
 
 ./yii migrate --migrationPath=@funson86/yii-blog/migrations
 
 https://github.com/funson86/yii2-blog
-
-https://github.com/mdmsoft/yii2-admin
 
 http://yii2blog.com/
 
