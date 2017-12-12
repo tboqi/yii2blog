@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2119288c3b994906e8eda191bf130daa",
+    "content-hash": "e84a5c10be909b6e8b3a1f58d872a807",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -368,6 +368,59 @@
             "time": "2014-11-19T22:04:08+00:00"
         },
         {
+            "name": "smarty/smarty",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smarty-php/smarty.git",
+                "reference": "93909aacf8df28cbd41b26adfc1a3af1de29ab9b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/93909aacf8df28cbd41b26adfc1a3af1de29ab9b",
+                "reference": "93909aacf8df28cbd41b26adfc1a3af1de29ab9b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "libs/bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Monte Ohrt",
+                    "email": "monte@ohrt.com"
+                },
+                {
+                    "name": "Uwe Tews",
+                    "email": "uwe.tews@googlemail.com"
+                },
+                {
+                    "name": "Rodney Rehm",
+                    "email": "rodney.rehm@medialize.de"
+                }
+            ],
+            "description": "Smarty - the compiling PHP template engine",
+            "homepage": "http://www.smarty.net",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2017-11-22T00:21:09+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "5.x-dev",
             "source": {
@@ -616,6 +669,53 @@
                 "yii2"
             ],
             "time": "2017-08-01T14:22:25+00:00"
+        },
+        {
+            "name": "yiisoft/yii2-smarty",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-smarty.git",
+                "reference": "862b524d87421022aa72796a359d552a23e9c9fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-smarty/zipball/862b524d87421022aa72796a359d552a23e9c9fc",
+                "reference": "862b524d87421022aa72796a359d552a23e9c9fc",
+                "shasum": ""
+            },
+            "require": {
+                "smarty/smarty": "~3.1.0",
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\smarty\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Makarov",
+                    "email": "sam@rmcreative.ru"
+                }
+            ],
+            "description": "The Smarty integration for the Yii framework",
+            "keywords": [
+                "renderer",
+                "smarty",
+                "yii2"
+            ],
+            "time": "2017-08-02T12:57:40+00:00"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
@@ -3340,7 +3440,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "funson86/yii2-blog": 20
+        "funson86/yii2-blog": 20,
+        "yiisoft/yii2-smarty": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

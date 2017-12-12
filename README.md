@@ -22,6 +22,10 @@ https://github.com/mdmsoft/yii2-admin
 
 http://yii2blog.com/
 
+https://github.com/yiisoft/yii2-smarty
+
+composer require --prefer-dist yiisoft/yii2-smarty
+
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">

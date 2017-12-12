@@ -13,6 +13,15 @@ use yii\web\Response;
 class SiteController extends Controller
 {
     /**
+     * Displays homepage.
+     *
+     * @return mixed
+     */
+    public function actionIndex()
+    {
+        return $this->render('index.tpl');
+    }
+    /**
      * @inheritdoc
      */
     public function behaviors()

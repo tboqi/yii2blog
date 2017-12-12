@@ -64,6 +64,14 @@ $config = [
             'thousandSeparator' => ' ',
             'currencyCode' => 'CNY',
         ],
+        'view' => [
+            'renderers' => [
+                'tpl' => [
+                    'class' => 'yii\smarty\ViewRenderer',
+                    //'cachePath' => '@runtime/Smarty/cache',
+                ],
+            ],
+        ],
     ],
     'defaultRoute' => 'blog', //set blog as default route
     'params' => $params,
