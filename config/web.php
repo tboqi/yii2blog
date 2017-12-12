@@ -77,7 +77,7 @@ $config = [
     'params' => $params,
     'modules' => [
         'admin_system' => [
-            'class' => 'mdm\admin\Module',
+            'class' => 'app\modules\admin\Module',
             'layout' => 'main',
             'menus' => [
                 'assignment' => [
@@ -100,7 +100,7 @@ $config = [
         ],
     ],
     'as access' => [
-        'class' => 'mdm\admin\components\AccessControl',
+        'class' => 'app\modules\admin\components\AccessControl',
         'allowActions' => [
             'site/*',
             'blog/*',
