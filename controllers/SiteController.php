@@ -3,9 +3,13 @@
 namespace app\controllers;
 
 use app\models\LoginForm;
+use app\modules\blog\models\BlogPost;
+use app\modules\blog\models\Status;
 use Yii;
+use yii\data\Pagination;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use yii\helpers\Html;
 use yii\web\Controller;
 use yii\web\Response;
 
@@ -65,10 +69,47 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $this->layout = false;
+
+        $query = BlogPost::find();
+        $query->where([
+            'status' => Status::STATUS_ACTIVE,
+        ]);
+
+        if (Yii::$app->request->get('keyword')) {
+            $keyword = strtr(Yii::$app->request->get('keyword'), array('%' => '\%', '_' => '\_', '\\' => '\\\\'));
+            $keyword = Yii::$app->formatter->asText($keyword);
+
+            $query->andFilterWhere([
+                'or', ['like', 'title', $keyword], ['like', 'content', $keyword],
+            ]);
+        }
+
+        $pagination = new Pagination([
+            'defaultPageSize' => Yii::$app->params['blogPostPageCount'],
+            'totalCount' => $query->count(),
+        ]);
+
+        $posts = $query->orderBy('created_at desc')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+        foreach ($posts as $key => $post) {
+            $posts[$key]->title = Html::a(Html::encode($post->title), $post->url);
+            $posts[$key]->created_at = Yii::$app->formatter->asDate($post->created_at);
+            // $posts[$key]->username = $post->user->username;
+            // $posts[$key]->category = '<a href="' . Yii::$app->getUrlManager()->createUrl(['/blog/default/catalog/', 'id' => $post->catalog->id, 'surname' => $post->catalog->surname]) . '">' . $post->catalog->title . '</a>';
+            // $posts[$key]->comments = Html::a("评论{$post->commentsCount}条", $post->url . '#comments');
+            $parser = new \cebe\markdown\GithubMarkdown();
+            $posts[$key]->content = $parser->parse($post->content);
+        }
+
         return $this->render('index.tpl', [
             'url' => [
                 'static' => '/statics/',
             ],
+            'title' => Yii::$app->params['blogTitle'] . ' - ' . Yii::$app->params['blogTitleSeo'],
+            'posts' => $posts,
         ]);
     }
 
