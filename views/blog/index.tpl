@@ -47,10 +47,10 @@
     <div class="container">
       <div class="blog-header">
         <h1 class="blog-title">{{$title}}</h1>
-        {{*<p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>*}}
       </div>
       <div class="row">
         <div class="col-sm-8 blog-main">
+          {{block name=blogmain}}
           {{foreach $posts as $post}}
           <div class="blog-post">
             <h2 class="blog-post-title">{{$post->title}}</h2>
@@ -70,7 +70,7 @@
           <nav>
             {{$pagination}}
           </nav>
-
+          {{/block}}
         </div><!-- /.blog-main -->
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
