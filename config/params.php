@@ -2,8 +2,8 @@
 
 return [
     'adminEmail' => 'admin@example.com',
-    'blogTitle' => 'HikeBlog',
-    'blogTitleSeo' => 'Simple Blog based on Yii2',
+    'blogTitle' => '我的博客',
+    'blogTitleSeo' => ' based on Yii2',
     'blogFooter' => 'Copyright &copy; ' . date('Y') . ' by ahuasheng on Yii2. All Rights Reserved.',
     'blogPostPageCount' => '10',
     'blogLinks' => [
