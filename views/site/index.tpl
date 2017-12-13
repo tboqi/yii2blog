@@ -60,7 +60,6 @@
               评论{{$post->commentsCount}}条
               {{foreach $post->tags as $tag}}
               <a href="/site/index?tag={{$tag}}">{{$tag}}</a>
-
               {{/foreach}}
             </p>
 

@@ -78,19 +78,10 @@ $config = [
     'defaultRoute' => 'blog', //set blog as default route
     'params' => $params,
     'modules' => [
-        'admin_system' => [
+        'admin' => [
             'class' => 'app\modules\admin\Module',
             'layout' => 'main',
-            'menus' => [
-                'assignment' => [
-                    'label' => '分配权限', // change label
-                ],
-                'default' => [
-                    'label' => '帮助', // change label
-                ],
-                // 'route' => null, // disable menu
-            ],
-            'defaultRoute' => 'default/index', //帮助页面
+            'defaultRoute' => 'site/index', //帮助页面
         ],
         'admin_blog' => [
             'class' => 'app\modules\blog\Module',
@@ -99,17 +90,6 @@ $config = [
         'blog' => [
             'class' => 'app\modules\blog\Module',
             'controllerNamespace' => 'app\modules\blog\controllers\frontend',
-        ],
-    ],
-    'as access' => [
-        'class' => 'app\modules\admin\components\AccessControl',
-        'allowActions' => [
-            'site/*',
-            'blog/*',
-            'admin*',
-            'yiiadmin/*',
-            'blogadmin/*',
-            // 'some-controller/some-action',
         ],
     ],
 ];
