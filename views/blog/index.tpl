@@ -56,10 +56,10 @@
             <h2 class="blog-post-title">{{$post->title}}</h2>
             <p class="blog-post-meta">
               {{$post->created_at}} 作者:{{$post->user->username}} 阅读{{$post->click}}次
-              <a href="/site/catalog?id={{$post->catalog->id}}&surname={{$post->catalog->title}}">{{$post->catalog->title}}</a>
+              <a href="/blog/default/catalog?id={{$post->catalog->id}}&surname={{$post->catalog->title}}">{{$post->catalog->title}}</a>
               评论{{$post->commentsCount}}条
               {{foreach $post->tags as $tag}}
-              <a href="/site/index?tag={{$tag}}">{{$tag}}</a>
+              <a href="/blog/default/index?tag={{$tag}}">{{$tag}}</a>
               {{/foreach}}
             </p>
 
@@ -78,7 +78,7 @@
             <h4>标签云</h4>
             <ol class="list-unstyled">
               {{foreach $tags as $tagname => $tagid}}
-              <li><a href="/site/index?tag={{$tagname}}">{{$tagname}}</a></li>
+              <li><a href="/blog/default/index?tag={{$tagname}}">{{$tagname}}</a></li>
               {{/foreach}}
             </ol>
           </div>
