@@ -55,7 +55,7 @@
           <div class="blog-post">
             <h2 class="blog-post-title">{{$post->title}}</h2>
             <p class="blog-post-meta">
-              {{$post->created_at}} {{$post->user->username}} {{$post->user->username}} 阅读{{$post->click}}次
+              {{$post->created_at}} 作者:{{$post->user->username}} 阅读{{$post->click}}次
               <a href="/site/catalog?id={{$post->catalog->id}}&surname={{$post->catalog->title}}">{{$post->catalog->title}}</a>
               评论{{$post->commentsCount}}条
               {{foreach $post->tags as $tag}}
