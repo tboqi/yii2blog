@@ -21,107 +21,26 @@
 <script type="text/javascript" src="{{$url.static}}/H-ui.admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>后台管理 H-ui.admin v3.1</title>
-<meta name="keywords" content="H-ui.admin v3.1,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
-<meta name="description" content="H-ui.admin v3.1，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+<title>后台管理</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
 </head>
 <body>
 <header class="navbar-wrapper">
   <div class="navbar navbar-fixed-top">
-    <div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/">后台管理 H-ui.admin</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="/">H-ui</a>
-      <span class="logo navbar-slogan f-l mr-10 hidden-xs">v3.1</span>
-      <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667; aaaaaa</a>
-      <nav class="nav navbar-nav">
-        <ul class="cl">
-          {{*<li class="dropDown dropDown_hover"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
-            <ul class="dropDown-menu menu radius box-shadow">
-              <li><a href="javascript:;" onclick="article_add('添加资讯','article-add.html')"><i class="Hui-iconfont">&#xe616;</i> 资讯</a></li>
-              <li><a href="javascript:;" onclick="picture_add('添加资讯','picture-add.html')"><i class="Hui-iconfont">&#xe613;</i> 图片</a></li>
-              <li><a href="javascript:;" onclick="product_add('添加资讯','product-add.html')"><i class="Hui-iconfont">&#xe620;</i> 产品</a></li>
-              <li><a href="javascript:;" onclick="member_add('添加用户','member-add.html','','510')"><i class="Hui-iconfont">&#xe60d;</i> 用户</a></li>
-            </ul>
-          </li>*}}
-          {{*<li class="dropDown dropDown_hover">
-            <a href="javascript:;" class="dropDown_A">工具 <i class="Hui-iconfont">&#xe6d5;</i></a>
-            <ul class="dropDown-menu menu radius box-shadow">
-              <li>
-                <a href="http://www.h-ui.net/bug.shtml" target="_blank">Bug兼容性汇总</a>
-              </li>
-              <li>
-                <a href="http://www.h-ui.net/websafecolors.shtml" target="_blank">web安全色</a>
-              </li>
-              <li>
-                <a href="http://www.h-ui.net/Hui-3.7-Hui-iconfont.shtml" target="_blank">Hui-iconfont</a>
-              </li>
-              <li>
-                <a href="javascript:;">web工具箱<i class="arrow Hui-iconfont">&#xe6d7;</i></a>
-                <ul class="menu">
-                  <li>
-                    <a href="http://www.h-ui.net/tools/jsformat.shtml" target="_blank">JS/HTML格式化工具</a>
-                  </li>
-                  <li>
-                    <a href="http://www.h-ui.net/tools/HTMLtoJS.shtml" target="_blank">HTML/JS转换工具</a>
-                  </li>
-                  <li>
-                    <a href="http://www.h-ui.net/tools/cssformat.shtml" target="_blank">CSS代码格式化工具</a>
-                  </li>
-                  <li>
-                    <a href="http://www.h-ui.net/tools/daxiaoxie.shtml" target="_blank">字母大小写转换工具</a>
-                  </li>
-                  <li>
-                    <a href="http://www.h-ui.net/tools/fantizhuanhuan.shtml" target="_blank">繁体字、火星文转换</a>
-                  </li>
-                  <li>
-                    <a href="javascript:;">三级菜单<i class="arrow Hui-iconfont">&#xe6d7;</i></a>
-                    <ul class="menu">
-                      <li>
-                        <a href="javascript:;">四级菜单</a>
-                      </li>
-                      <li>
-                        <a href="javascript:;">四级菜单</a>
-                      </li>
-                      <li>
-                        <a href="javascript:;">四级菜单</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">三级导航</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">二级导航</a>
-              </li>
-              <li class="disabled">
-                <a href="javascript:;">二级菜单</a>
-              </li>
-            </ul>
-          </li>*}}
-        </ul>
-      </nav>
+    <div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/admin/">后台管理</a>
     <nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
       <ul class="cl">
+        <li><a href="/">前台页面</a></li>
         <li>{{$userInfo.role}}</li>
         <li class="dropDown dropDown_hover">
           <a href="#" class="dropDown_A">{{$userInfo.name}} <i class="Hui-iconfont">&#xe6d5;</i></a>
           <ul class="dropDown-menu menu radius box-shadow">
             <li><a href="javascript:;" onClick="myselfinfo({{$userInfo.id}})">个人信息</a></li>
-            {{*<li><a href="#">切换账户</a></li>*}}
+            <li><a href="javascript:;" onClick="changePassword()">修改密码</a></li>
             <li><a href="/site/logout">退出</a></li>
           </ul>
         </li>
-        {{*<li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
-        <li id="Hui-skin" class="dropDown right dropDown_hover"> <a href="javascript:;" class="dropDown_A" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
-          <ul class="dropDown-menu menu radius box-shadow">
-            <li><a href="javascript:;" data-val="default" title="默认（黑色）">默认（黑色）</a></li>
-            <li><a href="javascript:;" data-val="blue" title="蓝色">蓝色</a></li>
-            <li><a href="javascript:;" data-val="green" title="绿色">绿色</a></li>
-            <li><a href="javascript:;" data-val="red" title="红色">红色</a></li>
-            <li><a href="javascript:;" data-val="yellow" title="黄色">黄色</a></li>
-            <li><a href="javascript:;" data-val="orange" title="橙色">橙色</a></li>
-          </ul>
-        </li>*}}
       </ul>
     </nav>
   </div>
@@ -206,9 +125,11 @@ $(function(){
   });
 }*}}
 function myselfinfo(id){
-  layer_show('查看信息','/admin/user/update?id='+id,'','500');
+  layer_show('查看信息','/admin/user/view?id='+id,'','500');
 }
-
+function changePassword(){
+  layer_show('修改密码','/admin/user/change-password','500');
+}
 /*资讯-添加*/
 function article_add(title,url){
   var index = layer.open({
