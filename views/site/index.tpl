@@ -47,7 +47,7 @@
     <div class="container">
       <div class="blog-header">
         <h1 class="blog-title">{{$title}}</h1>
-        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+        {{*<p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>*}}
       </div>
       <div class="row">
         <div class="col-sm-8 blog-main">
@@ -56,9 +56,12 @@
             <h2 class="blog-post-title">{{$post->title}}</h2>
             <p class="blog-post-meta">
               {{$post->created_at}} {{$post->user->username}} {{$post->user->username}} 阅读{{$post->click}}次
-              <a href="/blog/default/catalog?id={{$post->catalog->id}}&surname={{$post->catalog->title}}">{{$post->catalog->title}}</a>
-              {{$post->tagLinks|implode:' '}}
+              <a href="/site/catalog?id={{$post->catalog->id}}&surname={{$post->catalog->title}}">{{$post->catalog->title}}</a>
               评论{{$post->commentsCount}}条
+              {{foreach $post->tags as $tag}}
+              <a href="/site/index?tag={{$tag}}">{{$tag}}</a>
+
+              {{/foreach}}
             </p>
 
             {{$post->content}}
@@ -76,7 +79,7 @@
             <h4>标签云</h4>
             <ol class="list-unstyled">
               {{foreach $tags as $tagname => $tagid}}
-              <li><a href="/blog/default/index?tag={{$tagname}}">{{$tagname}}</a></li>
+              <li><a href="/site/index?tag={{$tagname}}">{{$tagname}}</a></li>
               {{/foreach}}
             </ol>
           </div>
