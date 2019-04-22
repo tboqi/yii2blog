@@ -16,6 +16,9 @@ https://github.com/yiisoft/yii2-smarty
 
 composer require --prefer-dist yiisoft/yii2-smarty
 
+git submodule init
+git submodule update
+
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
